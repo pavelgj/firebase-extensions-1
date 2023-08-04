@@ -82,16 +82,16 @@ resources:
       timeout: 540s
       taskQueueTrigger: {}
 
-  - name: updateIndexConfig
-    type: firebaseextensions.v1beta.function
-    description: >-
-      Updates the configuration of the Vertex Matching Engine index.
-    properties:
-      availableMemoryMb: 512
-      location: ${LOCATION}
-      runtime: 'nodejs16'
-      timeout: 540s
-      taskQueueTrigger: {}
+  # - name: updateIndexConfig
+  #   type: firebaseextensions.v1beta.function
+  #   description: >-
+  #     Updates the configuration of the Vertex Matching Engine index.
+  #   properties:
+  #     availableMemoryMb: 512
+  #     location: ${LOCATION}
+  #     runtime: 'nodejs16'
+  #     timeout: 540s
+  #     taskQueueTrigger: {}
 
   - name: backfillTask
     type: firebaseextensions.v1beta.function
@@ -642,6 +642,6 @@ lifecycleEvents:
   onInstall:
     function: backfillTrigger
     processingMessage: Setting up Vertex Matching Engine
-  onConfigure:
-    function: updateIndexConfig
-    processingMessage: Update the configuration of the extension's Vertex index
+  # onConfigure:
+  #   function: updateIndexConfig
+  #   processingMessage: Update the configuration of the extension's Vertex index
